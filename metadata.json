@@ -1,0 +1,5 @@
+{
+  "name": "Pythonic React Calculator",
+  "description": "An interactive and responsive calculator with the aesthetic of a Python REPL, built with React and Tailwind CSS.",
+  "requestFramePermissions": []
+}
