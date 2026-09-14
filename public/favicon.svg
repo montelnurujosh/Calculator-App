@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#052e16"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="eqGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Calculator Body -->
+  <rect x="6" y="4" width="52" height="56" rx="12" fill="url(#bodyGrad)" stroke="#334155" stroke-width="2"/>
+
+  <!-- Calculator Screen (Terminal LCD) -->
+  <rect x="12" y="10" width="40" height="14" rx="4" fill="url(#screenGrad)" stroke="#15803d" stroke-width="1.5"/>
+  <!-- Terminal Prompt & Value on Screen -->
+  <text x="16" y="21" font-family="monospace" font-size="9" font-weight="bold" fill="#4ade80">&gt; 42</text>
+
+  <!-- Buttons Grid -->
+  <!-- Row 1: C, ÷, × -->
+  <rect x="12" y="28" width="10" height="8" rx="2.5" fill="#ef4444" opacity="0.9"/>
+  <text x="17" y="34.5" font-family="sans-serif" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">C</text>
+
+  <rect x="27" y="28" width="10" height="8" rx="2.5" fill="#334155"/>
+  <text x="32" y="34.5" font-family="sans-serif" font-size="8" font-weight="bold" fill="#f8fafc" text-anchor="middle">÷</text>
+
+  <rect x="42" y="28" width="10" height="8" rx="2.5" fill="#f59e0b"/>
+  <text x="47" y="34.5" font-family="sans-serif" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">×</text>
+
+  <!-- Row 2: 7, 8, - -->
+  <rect x="12" y="39" width="10" height="8" rx="2.5" fill="#334155"/>
+  <text x="17" y="45.5" font-family="sans-serif" font-size="7" font-weight="bold" fill="#f8fafc" text-anchor="middle">7</text>
+
+  <rect x="27" y="39" width="10" height="8" rx="2.5" fill="#334155"/>
+  <text x="32" y="45.5" font-family="sans-serif" font-size="7" font-weight="bold" fill="#f8fafc" text-anchor="middle">8</text>
+
+  <rect x="42" y="39" width="10" height="8" rx="2.5" fill="#f59e0b"/>
+  <text x="47" y="45.5" font-family="sans-serif" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">−</text>
+
+  <!-- Row 3: 0, +, = -->
+  <rect x="12" y="50" width="10" height="8" rx="2.5" fill="#334155"/>
+  <text x="17" y="56.5" font-family="sans-serif" font-size="7" font-weight="bold" fill="#f8fafc" text-anchor="middle">0</text>
+
+  <rect x="27" y="50" width="10" height="8" rx="2.5" fill="#f59e0b"/>
+  <text x="32" y="56.5" font-family="sans-serif" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">+</text>
+
+  <rect x="42" y="50" width="10" height="8" rx="2.5" fill="url(#eqGrad)"/>
+  <text x="47" y="56.5" font-family="sans-serif" font-size="8" font-weight="bold" fill="#ffffff" text-anchor="middle">=</text>
+</svg>
+

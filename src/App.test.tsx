@@ -186,20 +186,20 @@ describe('Pythonic React Calculator App', () => {
     await user.click(screen.getByRole('button', { name: 'Square Root' }));
     expect(input).toHaveValue('sqrt(');
 
-    // Complete sqrt(64)
-    await user.type(input, '64){enter}');
-    expect(screen.getByText('8')).toBeInTheDocument();
+    // Complete sqrt(400)
+    await user.type(input, '400){enter}');
+    expect(screen.getByText('20')).toBeInTheDocument();
 
     // Click Ans chip
     await user.click(screen.getByRole('button', { name: 'Last Answer' }));
-    expect(input).toHaveValue('8');
+    expect(input).toHaveValue('20');
 
     // Click x² chip
     await user.click(screen.getByRole('button', { name: 'Square (x²)' }));
-    expect(input).toHaveValue('8**2');
+    expect(input).toHaveValue('20**2');
 
     await user.type(input, '{enter}');
-    expect(screen.getByText('64')).toBeInTheDocument();
+    expect(screen.getByText('400')).toBeInTheDocument();
   });
 
   it('toggles keypad visibility when clicking toggle button', async () => {
