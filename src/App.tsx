@@ -170,14 +170,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen ${theme.bgClass} ${theme.textColor} font-mono flex flex-col items-center justify-center sm:p-4 transition-colors duration-300 select-none ${themeId === 'matrix' ? 'crt-effect' : ''}`}>
+    <div className={`min-h-[100dvh] ${theme.bgClass} ${theme.textColor} font-mono flex flex-col items-center justify-center sm:p-4 transition-colors duration-300 select-none ${themeId === 'matrix' ? 'crt-effect' : ''}`}>
       {/* Terminal Window Container */}
-      <div className={`w-full max-w-4xl h-screen sm:h-[94vh] flex flex-col ${theme.windowBgClass} sm:rounded-2xl border ${theme.borderColor} shadow-2xl overflow-hidden backdrop-blur-xl transition-all duration-300`}>
+      <div className={`w-full max-w-4xl h-[100dvh] sm:h-[92vh] max-h-[100dvh] flex flex-col ${theme.windowBgClass} sm:rounded-2xl border ${theme.borderColor} shadow-2xl overflow-hidden backdrop-blur-xl transition-all duration-300`}>
         
         {/* macOS / Linux Style Titlebar Header */}
-        <header className={`px-4 py-3 ${theme.headerBgClass} border-b ${theme.borderColor} flex items-center justify-between flex-shrink-0 gap-3`}>
+        <header className={`px-3 py-2 sm:px-4 sm:py-3 ${theme.headerBgClass} border-b ${theme.borderColor} flex items-center justify-between flex-shrink-0 gap-2 sm:gap-3`}>
           {/* Traffic Light Window Buttons */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             <button
               type="button"
               onClick={clearAllHistory}
@@ -203,33 +203,33 @@ const App: React.FC = () => {
               title="Cycle Theme"
               aria-label="Cycle theme"
             />
-            <span className="text-xs text-gray-500 ml-2 hidden sm:inline-block font-mono">bash — 80×24</span>
+            <span className="text-xs text-gray-500 ml-1.5 hidden md:inline-block font-mono">bash — 80×24</span>
           </div>
 
           {/* Center App Title */}
-          <div className="flex items-center gap-2 text-center">
+          <div className="flex items-center gap-1.5 min-w-0 flex-shrink truncate text-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={theme.promptColor}
+              className={`${theme.promptColor} flex-shrink-0`}
             >
               <polyline points="4 17 10 11 4 5"></polyline>
               <line x1="12" y1="19" x2="20" y2="19"></line>
             </svg>
-            <h1 className="text-sm sm:text-base font-bold tracking-wide">
+            <h1 className="text-xs sm:text-base font-bold tracking-wide truncate">
               Pythonic React Calculator
             </h1>
           </div>
 
           {/* Right Controls: Theme Selector & Clear Button */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
             {/* Theme Dropdown */}
             <select
               value={themeId}
@@ -315,8 +315,8 @@ const App: React.FC = () => {
                     {String(entry.result)}
                   </p>
 
-                  {/* Action Bar on Hover */}
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 select-none">
+                  {/* Action Bar on Hover (and always visible on touch/mobile) */}
+                  <div className="opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex items-center gap-1.5 select-none flex-shrink-0">
                     <button
                       type="button"
                       onClick={() => copyToClipboard(entry.id, String(entry.result))}
@@ -472,7 +472,7 @@ const App: React.FC = () => {
 
           {/* Keypad Grid (Collapsible) */}
           {showKeypad && (
-            <div className="grid grid-cols-4 gap-2 max-w-xl mx-auto transition-all duration-300">
+            <div className="grid grid-cols-4 gap-1.5 sm:gap-2 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto transition-all duration-300">
               <CalculatorButton value="C" onClick={handleButtonClick} ariaLabel="Clear" className={theme.clearBtnClass} />
               <CalculatorButton value="DEL" onClick={handleButtonClick} ariaLabel="Backspace" className={theme.delBtnClass} />
               <CalculatorButton value="(" onClick={handleButtonClick} ariaLabel="Open parenthesis" className={theme.fnBtnClass} />
