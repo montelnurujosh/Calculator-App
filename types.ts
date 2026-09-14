@@ -1,5 +1,5 @@
 export interface HistoryEntry {
-  id: number;
+  id: string;
   expression: string;
   result: string | number;
 }

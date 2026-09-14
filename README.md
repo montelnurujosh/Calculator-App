@@ -1,35 +1,81 @@
 # Pythonic React Calculator
 
-This project is an interactive and responsive calculator web application with the aesthetic of a Python REPL (Read-Eval-Print Loop). It's built using modern web technologies to provide a familiar and efficient user experience for developers and enthusiasts alike.
+An interactive and responsive calculator web application designed with the authentic aesthetic and keyboard experience of a Python REPL (Read-Eval-Print Loop). Built with React 19, TypeScript, Tailwind CSS, and Vite.
 
 ## Features
 
-- **Python REPL Aesthetic**: The UI is designed to look and feel like a command-line Python interpreter, with `>>>` prompts and color-coded output.
-- **Interactive Interface**: Supports both keyboard input for rapid calculations and a clickable button interface for ease of use on all devices.
-- **Responsive Design**: The layout adapts seamlessly to different screen sizes, ensuring a great experience on desktops, tablets, and mobile phones.
-- **Calculation History**: All entered expressions and their results are displayed in a scrollable history log, just like a real console session.
-- **Error Handling**: Invalid expressions are gracefully handled and display a user-friendly error message without crashing the app.
-- **Standard Operations**: Supports basic arithmetic operations, parentheses for grouping, and more, powered by the robust `math.js` library.
+- **Python REPL Aesthetic**: Terminal styling with `>>>` interactive prompts, syntax coloring, and simulated interpreter header (`Python 3.12.3`).
+- **Python-Style Exponentiation**: Supports native Python power notation `**` (e.g. `2**8 = 256`) as well as caret `^`.
+- **Keyboard History Navigation**: Cycle through previous expressions using the `↑` (Up) and `↓` (Down) arrow keys, just like a true Python console.
+- **Python REPL Commands**: Type `clear()` or `cls` to clear the terminal history directly from the input prompt, or click the header button.
+- **Advanced Math Evaluation**: Powered by bundled `mathjs` supporting arithmetic, precedence, grouping, constants (`pi`, `e`), and functions (`sqrt(x)`, `abs(x)`, `sin(x)`, etc.).
+- **Graceful Error Handling**: Detects invalid syntax and division by zero, formatting them with Pythonic error messages (`ZeroDivisionError: division by zero`).
+- **Responsive & Accessible**: Works seamlessly on mobile, tablet, and desktop with on-screen buttons and keyboard navigation, complete with `aria-label` screen reader support.
 
 ## Tech Stack
 
-- **React**: A declarative, component-based JavaScript library for building user interfaces.
-- **TypeScript**: A statically typed superset of JavaScript that adds type safety and improves developer experience.
-- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom, modern designs.
-- **math.js**: A comprehensive math library for JavaScript and Node.js that provides a safe and powerful `evaluate` function to parse mathematical expressions.
+- **React 19**
+- **TypeScript 5.8**
+- **Vite 6**
+- **Tailwind CSS 4**
+- **math.js 15**
+- **Vitest & React Testing Library**
 
-## How to Use
+## Getting Started
 
-1.  **Input an Expression**:
-    -   Type a mathematical expression (e.g., `(2 + 3) * 4`) directly into the input field at the bottom of the screen.
-    -   Alternatively, use the on-screen buttons to construct your expression.
-2.  **Evaluate**:
-    -   Press the `Enter` key on your keyboard.
-    -   Click the `=` button.
-3.  **Control Buttons**:
-    -   `C`: Clears the current input field.
-    -   `DEL`: Deletes the last character from the input (backspace).
-    -   `()`: Add parentheses to your expressions.
-    -   `+`, `-`, `*`, `/`: Standard arithmetic operators.
+### Installation
 
-The result of your calculation will be displayed, and the entire exchange will be added to the history log above.
+```bash
+npm install
+```
+
+### Development Server
+
+```bash
+npm run dev
+```
+
+### Running Tests
+
+Run the full automated test suite (unit and integration tests):
+
+```bash
+npm test
+```
+
+To run in watch mode during development:
+
+```bash
+npm run test:watch
+```
+
+### Type Checking
+
+Verify TypeScript types across the entire project:
+
+```bash
+npm run typecheck
+```
+
+### Production Build
+
+Build the optimized, production-ready bundle with chunk splitting:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+The project is fully configured for zero-config production deployment across major hosting platforms:
+
+- **Netlify**: Configured via `netlify.toml` (`dist` publish directory with single-page application redirect rules).
+- **Vercel**: Configured via `vercel.json` (`dist` output directory with rewrite rules).
+- **GitHub Pages / Static Hosts**: Relative asset base path (`./`) configured in `vite.config.ts`.
+- **Continuous Integration (CI)**: Automated GitHub Actions workflow at `.github/workflows/ci.yml` runs type-checking, tests, and builds on push and pull requests.
